@@ -1,2 +1,2 @@
 # Tattle
-Tattle is an imposter style clone on a popular game, wordle.
+Tattle is an imposter style clone on the popular game, wordle.
