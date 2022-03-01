@@ -1,36 +1,26 @@
 let changeColors = document.getElementById("change")
 let r = document.querySelector(':root');
-let theme = true; // True means DARK
 
-const darkTheme = ["#1c1e24", // Background Color
-                   "#31339a", // Text and Keyboard
-                   "#2d30df", // After Text Border
-                   "#46bf66", // Correct
-                   "#ddbc35", // Different Spots
-                   "#434546", // Wrong Letter
-                   "#ffffff", // Text Pure white
-                  ]; 
-const lightTheme = ["#ffffff", // Background Color
-                    "#d3d6da", // Text and Keyboard
-                    "#878a8c", // After Text Border
-                    "#46bf66", // Correct
-                    "#ddbc35", // Different Spot
-                    "#787c7eff", // Wrong Letter
-                    "#1c1e24", // Text
-                   ]; 
+/* 0 is dark 1 is light
+Background Color, Text Border and Keyboard, After Text Border, Correct Different Spots, Wrong Letter, Text Pure white */
+let themesColors = [["#1c1e24", "#31339a", "#2d30df", "#46bf66", "#ddbc35", "#434546", "#ffffff"], 
+                ["#ffffff", "#d3d6da", "#878a8c", "#46bf66", "#ddbc35", "#787c7eff","#1c1e24"]]
 
-changeColors.addEventListener("click", function(){
-  if (theme == true){
-    for (i = 0; i < darkTheme.length; i++){
-     r.style.setProperty('--color' + (i + 1).toString(), lightTheme[i]);
-    };
-  }; 
+//Defult theme is 0 / Dark
+let theme = 0; 
 
-  if (theme == false){
-    for (i = 0; i < lightTheme.length; i++){
-     r.style.setProperty('--color' + (i + 1).toString(), darkTheme[i]);
-    };
-  }; 
-    
-  theme = !theme;
-});
+// Changes to light theme if defult theme is dark
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+  swapTheme();
+}
+
+function swapTheme(){
+  theme = 1 - theme; 
+  for (i = 0; i < themesColors[theme].length; i++){
+       r.style.setProperty('--color' + (i + 1).toString(), themesColors[theme][i]);
+  };
+};
+
+
+changeColors.addEventListener("click", swapTheme);
+
