@@ -1,0 +1,41 @@
+:root{
+  --color1: #1c1e24;
+  --color2: #31339a;
+  --color3: #2d30df;
+  --color4: #46bf66;
+  --color5: #ddbc35;
+  --color6: #434546;
+  --color7: #ffffff;
+
+}
+
+body {
+  background: var(--color1);
+  color: var(--color7);
+  text-align: center;
+  font-size: 20px;  
+}
+
+#one{
+  background: var(--color2);
+}
+
+#two{
+  background: var(--color3);
+}
+
+#three{
+  background: var(--color4);
+}
+
+#four{
+  background: var(--color5);
+}
+
+#five{
+  background: var(--color6);
+}
+
+.colorTest{
+  padding: 25px;
+}
