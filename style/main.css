@@ -11,7 +11,6 @@
 
 body {
   background: var(--color1);
-  color: var(--color7);
 }
 
 #one{
@@ -19,7 +18,11 @@ body {
 }
 
 #two{
-  background: var(--color3);
+  background: none;
+  outline: 5px solid var(--color3);
+  outline-offset: -5px;
+
+
 }
 
 #three{
@@ -35,11 +38,15 @@ body {
 }
 
 .colorTest{
-  width: 35px;
-  height: 45px;
+  color: var(--color7);
+
   text-align: center;
   vertical-align: middle;
-  font-size: 25px;  
+  border: none;
+    
+  padding: 30px 24px;
+
+  font-size: 20px;  
   font-family: Helvetica;
   font-weight: 700;
   border-radius: 5px;
