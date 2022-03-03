@@ -8,32 +8,38 @@
   --color7: #ffffff;
 
 }
-
+:root.light{
+--color1: #ffffff ;
+--color2: #d3d6da ;
+--color3: #878a8c ;
+--color4: #46bf66 ;
+--color5: #ddbc35 ;
+--color6: #787c7e;
+--color7: #1c1e24;
+}
 body {
   background: var(--color1);
 }
 
-#one{
+.keys{
   background: var(--color2);
 }
 
-#two{
+.borderTyped{
   background: none;
   outline: 5px solid var(--color3);
   outline-offset: -5px;
-
-
 }
 
-#three{
+.correct{
   background: var(--color4);
 }
 
-#four{
+.wrongSpot{
   background: var(--color5);
 }
 
-#five{
+.incorrect{
   background: var(--color6);
 }
 
@@ -50,4 +56,69 @@ body {
   font-family: Helvetica;
   font-weight: 700;
   border-radius: 5px;
+}
+
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 43px;
+  height: 25px;
+}
+
+.toggle{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: var(--color6);
+  transition: .3s;
+  border-radius: 35px;
+}
+
+.switch input {display:none;}
+
+.toggle:before{
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4.5px;
+  background: #fff;
+  border-radius: 16px;
+  transition: 0.3s;
+  
+}
+
+input:checked + .toggle{
+  background-color: var(--color4);
+}
+
+input:checked + .toggle:before{
+  transform: translate(19.5px);
+}
+
+
+.checked{
+  background: var(--color4);
+
+/*   animation-duration: .3s;
+  animation-name: checkedToggle;
+  animation-fill-mode: forwards;  */
+/*   transition-property: left;
+  transition-duration: .3s; */
+
+  
+
+}
+
+@keyframes checkedToggle{
+  to{
+    left: 28.5px;
+  }
+/*   0%   {left: 12px;}
+  100% {left: 28.5px;} */
 }
